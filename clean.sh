@@ -1,0 +1,1 @@
+rm -rf dist build flutter_gen.egg-info

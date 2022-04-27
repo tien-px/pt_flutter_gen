@@ -1,0 +1,8 @@
+recursive-include flutter_gen_templates *.dart
+recursive-include flutter_gen_templates *.strings
+recursive-include flutter_gen_templates *.yml
+recursive-include flutter_gen_templates *.h
+recursive-include flutter_gen_templates *.txt
+recursive-include flutter_gen_templates *.md
+recursive-include flutter_gen_templates *.png
+recursive-include flutter_gen_templates *.plist
