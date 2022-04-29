@@ -1,6 +1,4 @@
-import 'package:{{ package_name }}/core/architecture/mobx_viewmodel.dart';
-import 'package:{{ package_name }}/data/repositories/app_repository.dart';
-import 'package:{{ package_name }}/generated/router.g.dart';
+import 'package:{{ package_name }}/generated/generated.dart'; // ignore: unused_import
 import 'package:mobx/mobx.dart';
 
 part '{{ name_lower }}_viewmodel.g.dart';

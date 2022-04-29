@@ -42,7 +42,8 @@ setup(
         "Jinja2>=2.10",
         "watchdog>=2.1.7",
         "arghandler>=1.2",
-        "tqdm>=4.64.0"
+        "tqdm>=4.64.0",
+        "requests>=2.27.1",
     ],
     include_package_data=True,
 )

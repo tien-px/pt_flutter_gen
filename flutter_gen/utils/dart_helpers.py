@@ -69,7 +69,7 @@ def get_dart_class_name(content):
 
 
 def get_methods_from_string(content):
-    regex = r"\S+ (?!_)\w+\([^\(\)]*\)(?= {)"
+    regex = r"^(?!  \/\/)(?:.*) (?!_)\w+\([^\(\)]*\)(?= {| async)"
     return re.findall(regex, content, re.MULTILINE)
 
 

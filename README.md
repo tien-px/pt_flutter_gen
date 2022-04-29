@@ -13,38 +13,6 @@ The Flutter code generator for your assets, fonts, colors,… to **`increase you
 
 Inspired by [FlutterGen](https://github.com/FlutterGen/flutter_gen).
 
-<!-- ## Motivation
-
-Using asset path string directly is not safe.
-
-```yaml
-# pubspec.yaml
-flutter:
-  assets:
-    - assets/images/profile.jpg
-```
-
-❌ **Bad**  
-What would happen if you made a typo?
-
-```dart
-Widget build(BuildContext context) {
-  return Image.asset('assets/images/profile.jpeg');
-}
-
-// The following assertion was thrown resolving an image codec:
-// Unable to load asset: assets/images/profile.jpeg
-```
-
-⭕️ **Good**  
-We want to use it safely.
-
-```dart
-Widget build(BuildContext context) {
-  return Images.profile.image();
-}
-```-->
-
 ## Installation
 
 ### Python
@@ -84,6 +52,10 @@ $ flutter_gen -h
 
 $ flutter_gen watch
 ```
+
+## Android Studio Plugin
+
+* [Install Plugin](https://github.com/tien-px/pt_flutter_gen/tree/main/intellji)
 
 ## Configuration file
 

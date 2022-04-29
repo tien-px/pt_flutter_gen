@@ -68,28 +68,6 @@ def cmd_template(parser, context, args):
     args = parser.parse_args(args)
     CreateI18NCommand(args.key[0], args.text[0]).create()
 
-# @subcmd("gen", help="code generator")
-# def cmd_generate(parser, context, args):
-#     parser.description = "Code generator"
-#     parser.add_argument(
-#         "type",
-#         nargs=1,
-#         choices=["image", "localization", "object_mapper", "router"],
-#         help="type",
-#     )
-#     args = parser.parse_args(args)
-#     type = args.type[0]
-#     if type == "image":
-#         GenerateImageCommand().run()
-#     elif type == "localization":
-#         GenerateLocalizationCommand().run()
-#     elif type == "object_mapper":
-#         GenerateObjectMapperCommand().run()
-#     elif type == "router":
-#         GenerateRouterCommand().run()
-#     else:
-#         print("Invalid command")
-
 
 @subcmd("watch", help="watching the file system for updates and rebuilding as appropriate")
 def cmd_template(parser, context, args):
