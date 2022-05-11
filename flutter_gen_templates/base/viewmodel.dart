@@ -1,5 +1,6 @@
 import 'package:{{ package_name }}/generated/generated.dart'; // ignore: unused_import
 import 'package:mobx/mobx.dart';
+import 'package:{{ package_name }}/core/architecture/mobx_viewmodel.dart';
 
 part '{{ name_lower }}_viewmodel.g.dart';
 

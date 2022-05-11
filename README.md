@@ -33,6 +33,13 @@ $ brew install python3
 
 Works with MacOS and Windows.
 
+Window
+
+```sh
+$ pip install flutter_gen
+```
+
+Mac OS
 ```sh
 $ pip3 install flutter_gen
 ```
@@ -40,7 +47,7 @@ $ pip3 install flutter_gen
 Update via command line:
 
 ```sh
-$ pip3 install -U ptflutter
+$ pip3 install -U flutter_gen
 ```
 
 ## Usage

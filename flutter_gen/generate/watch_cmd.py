@@ -111,6 +111,8 @@ class WatchCommand(Command):
         os.system('flutter pub run build_runner watch --delete-conflicting-outputs')
 
     def run(self):
+        # Upgrade tools
+        os.system('pip3 install -U ptflutter')
         # Gen file
         self.createFile("assets/color/colors.txt")
         # Gen all
