@@ -43,7 +43,7 @@ class GenerateRouterCommand(Command):
                     route_name = re.sub(
                         '(?<!^)(?=[A-Z])', '_', class_name).upper()
                     args = class_name + "Args"
-                    is_include_args = "%s {}" % (args) not in content
+                    is_include_args = args in content
                     import_files.append(file)
                     item = RouterInfo(class_name, is_include_args, route_name)
                     items.append(item)
