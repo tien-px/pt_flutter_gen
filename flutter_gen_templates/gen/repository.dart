@@ -4,8 +4,9 @@
 
 abstract class AppRepository {
   {% for method in methods %}
-  {{ method }};
-  
+  /// In [{{ method.repo }}]
+  {{ method.method }};
+
   {% endfor %}
 }
 {% set comma = joiner(",") %}

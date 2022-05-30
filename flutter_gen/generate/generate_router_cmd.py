@@ -8,6 +8,7 @@ from ..utils.file_helpers import *
 from ..utils.utils import *
 from flutter_gen.utils.dart_helpers import format_dart_file_code
 from flutter_gen.utils.print import *
+from sys import platform
 
 
 class RouterInfo:
@@ -50,8 +51,12 @@ class GenerateRouterCommand(Command):
 
         package_name = get_current_dart_package_name()
         import_files = list(dict.fromkeys(import_files))
-        import_files = list(map(lambda x: x.replace(
-            "lib/", 'package:%s/' % package_name).replace('\\', '/'), import_files))
+        if platform == "darwin":
+            import_files = list(map(lambda x: x.replace(
+                "lib/", 'package:%s/' % package_name).replace('\\', '/'), import_files))
+        else:
+            import_files = list(map(lambda x: x.replace(
+                "lib\\", 'package:%s/' % package_name).replace('\\', '/'), import_files))
 
         env = Environment(
             loader=PackageLoader('flutter_gen_templates', 'gen'),
