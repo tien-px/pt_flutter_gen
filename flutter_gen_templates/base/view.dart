@@ -1,8 +1,8 @@
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:{{ package_name }}/core/architecture/mobx_view.dart';
-import 'package:{{ package_name }}/generated/generated.dart'; // ignore: unused_import
+import 'package:get/get.dart'; // ignore: unused_import
+import 'package:flutter_mobx/flutter_mobx.dart'; // ignore: unused_import
+import 'package:{{ package_name }}/core/architecture/mobx_view.dart'; // ignore: unused_import
+import 'package:{{ package_name }}/generated/r.g.dart'; // ignore: unused_import
 
 import '{{ name_lower }}_viewmodel.dart';
 

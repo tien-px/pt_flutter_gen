@@ -114,11 +114,11 @@ Example results of `assets/images/chip.jpg`:
 
 ```dart
 Widget build(BuildContext context) {
-  return Image(image: Images.chip);
+  return Image(image: R.images.chip);
 }
 
 Widget build(BuildContext context) {
-  return Images.chip.image(
+  return R.images.chip.image(
     width: 120,
     height: 120,
     fit: BoxFit.scaleDown,
@@ -126,7 +126,7 @@ Widget build(BuildContext context) {
 
 Widget build(BuildContext context) {
   // Images.chip.path = 'assets/images/chip3/chip3.jpg'
-  return Image.asset(Images.chip.path);
+  return Image.asset(R.images.chip.path);
 }
 
 ```
@@ -135,7 +135,7 @@ If you are using SVG images with [flutter_svg](https://pub.dev/packages/flutter_
 
 ```dart
 Widget build(BuildContext context) {
-  return Images.paint.svg(
+  return R.images.paint.svg(
     width: 120,
     height: 120
   );
@@ -146,7 +146,7 @@ Widget build(BuildContext context) {
 <p>
 
 ```dart
-// DO NOT EDIT. This is code generated via flutter_gen
+/// DO NOT EDIT. This is code generated via flutter_gen
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -286,8 +286,8 @@ These configurations will generate **`fonts.g.dart`** under the **`lib/generated
 Text(
   'Hi there, I\'m FlutterGen',
   style: TextStyle(
-    fontFamily: FontFamily.robotoMono,
-    fontFamilyFallback: const [FontFamily.raleway],
+    fontFamily: R.fonts.robotoMono,
+    fontFamilyFallback: const [R.fonts.raleway],
   ),
 ```
 
@@ -295,7 +295,7 @@ Text(
 <p>
 
 ```dart
-// DO NOT EDIT. This is code generated via flutter_gen
+/// DO NOT EDIT. This is code generated via flutter_gen
 
 class FontFamily {
   FontFamily._();
@@ -329,7 +329,7 @@ These configurations will generate **`colors.g.dart`** under the **`lib/generate
 Text(
   'Hi there, I\'m FlutterGen',
   style: TextStyle(
-    color: ColorName.hexF5CB84,
+    color: R.colors.hexF5CB84,
   ),
 ```
 

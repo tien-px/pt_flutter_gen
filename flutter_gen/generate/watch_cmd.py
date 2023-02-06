@@ -2,6 +2,7 @@
 
 from flutter_gen.generate.generate_color_cmd import GenerateColorCommand
 from flutter_gen.generate.generate_font_cmd import GenerateFontCommand
+from flutter_gen.generate.generate_r_cmd import GenerateRCommand
 from flutter_gen.generate.generate_repo_cmd import GenerateRepoCommand
 from flutter_gen.generate.generate_router_cmd import GenerateRouterCommand
 from flutter_gen.generate.generate_image_cmd import GenerateImageCommand
@@ -57,7 +58,7 @@ class WatchCommand(Command):
 
     @debounce(1)
     def _gen_image(self, event):
-        GenerateImageCommand().run()
+        GenerateRCommand().run()
 
      # Gen Localization
     def gen_localization(self, event):
@@ -65,7 +66,7 @@ class WatchCommand(Command):
 
     @debounce(1)
     def _gen_localization(self, event):
-        GenerateLocalizationCommand().run()
+        GenerateRCommand().run()
 
     # Gen Object Mapper
     def gen_mapper(self, event):
@@ -89,7 +90,7 @@ class WatchCommand(Command):
 
     @debounce(1)
     def _gen_color(self, event):
-        GenerateColorCommand().run()
+        GenerateRCommand().run()
 
     # Gen Router
     def gen_router(self, event):
@@ -112,15 +113,17 @@ class WatchCommand(Command):
 
     def run(self):
         # Upgrade tools
-        os.system('pip3 install -U flutter_gen')
+        # FIXME
+        # os.system('pip3 install -U flutter_gen')
         # Gen file
         self.createFile("assets/color/colors.txt")
         # Gen all
-        GenerateImageCommand().run()
-        GenerateObjectMapperCommand().run()
+        # GenerateImageCommand().run()
+        # GenerateLocalizationCommand().run()
+        # GenerateColorCommand().run()
+        GenerateRCommand().run()
+        # GenerateObjectMapperCommand().run()
         GenerateRouterCommand().run()
-        GenerateColorCommand().run()
-        GenerateLocalizationCommand().run()
         GenerateFontCommand().run()
         GenerateRepoCommand().run()
         # Start watch
@@ -140,7 +143,7 @@ class WatchCommand(Command):
             target=self.monitor, args=('./assets/color', self.gen_color, ['colors.txt']))
         thread_color.start()
         thread_router = multiprocessing.Process(
-            target=self.monitor, args=('./lib/scenes', self.gen_router, ['app_pages.dart', '*_viewmodel.dart']))
+            target=self.monitor, args=('./lib/scenes', self.gen_router, ['app_pages.dart']))
         thread_router.start()
         thread_repo = multiprocessing.Process(
             target=self.monitor, args=('./lib/data/repositories', self.gen_repo, ['*_repository.dart']))

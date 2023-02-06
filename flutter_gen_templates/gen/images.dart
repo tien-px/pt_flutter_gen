@@ -1,4 +1,4 @@
-// DO NOT EDIT. This is code generated via flutter_gen
+/// DO NOT EDIT. This is code generated via flutter_gen
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';

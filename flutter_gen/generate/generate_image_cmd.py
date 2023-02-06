@@ -5,8 +5,8 @@ from jinja2 import Environment, PackageLoader
 from ..utils.utils import *
 from ..utils.str_helpers import snake_to_camel, plural_to_singular
 from ..utils.file_helpers import create_file, is_file_path_exist
+from ..utils.print import *
 import os
-from flutter_gen.utils.print import *
 
 
 class ImageFile(object):

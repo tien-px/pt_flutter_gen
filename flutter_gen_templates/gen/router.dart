@@ -1,14 +1,32 @@
-// DO NOT EDIT. This is code generated via flutter_gen
+/// DO NOT EDIT. This is code generated via flutter_gen
 
-import 'package:pt_flutter_architecture/pt_flutter_architecture.dart';
+import 'package:get/get.dart';
 import 'package:{{ package_name }}/scenes/app/app_pages.dart';
 {% for file in import_files %}
 import '{{ file }}';
 {% endfor %}
 
-class AppRouter {
+abstract class AppRouter {
+  {% for item in items %}
+  {% if item.is_include_args %}
+  Future? to{{ item.class_name }}({{ item.class_name }}Args args, {int? id});
+  Future? offAll{{ item.class_name }}({{ item.class_name }}Args args, {int? id});
+  Future? offAndTo{{ item.class_name }}({{ item.class_name }}Args args, {int? id});
+  Future? off{{ item.class_name }}({{ item.class_name }}Args args, {int? id});
+  Future? offUntil{{ item.class_name }}({{ item.class_name }}Args args, {int? id});
+  {% else %}
+  Future? to{{ item.class_name }}({int? id});
+  Future? offAll{{ item.class_name }}({int? id});
+  Future? offAndTo{{ item.class_name }}({int? id});
+  Future? off{{ item.class_name }}({int? id});
+  Future? offUntil{{ item.class_name }}({int? id});
+  {% endif %}
+  {% endfor %}
+}
+
+class AppRouterImpl implements AppRouter {
   void back({int? id}) {
-    return Get.back(id: id);
+    Get.back(id: id);
   }
 
   void backToRoot({int? id}) {

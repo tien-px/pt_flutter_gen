@@ -1,4 +1,4 @@
-// DO NOT EDIT. This is code generated via flutter_gen
+/// DO NOT EDIT. This is code generated via flutter_gen
 
 class FontFamily {
   FontFamily._();

@@ -1,4 +1,4 @@
-// DO NOT EDIT. This is code generated via flutter_gen
+/// DO NOT EDIT. This is code generated via flutter_gen
 // ignore_for_file: non_constant_identifier_names, camel_case_types
 
 import 'package:easy_localization/easy_localization.dart';
