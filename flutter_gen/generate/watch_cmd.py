@@ -113,8 +113,7 @@ class WatchCommand(Command):
 
     def run(self):
         # Upgrade tools
-        # FIXME
-        # os.system('pip3 install -U flutter_gen')
+        os.system('pip3 install -U flutter_gen')
         # Gen file
         self.createFile("assets/color/colors.txt")
         # Gen all

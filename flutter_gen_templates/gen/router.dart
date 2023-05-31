@@ -7,6 +7,9 @@ import '{{ file }}';
 {% endfor %}
 
 abstract class AppRouter {
+  void reset()
+  void back({int? id});
+  void backToRoot({int? id});
   {% for item in items %}
   {% if item.is_include_args %}
   Future? to{{ item.class_name }}({{ item.class_name }}Args args, {int? id});
@@ -25,6 +28,10 @@ abstract class AppRouter {
 }
 
 class AppRouterImpl implements AppRouter {
+  void reset() {
+    Get.offAllNamed(Routes.INITIAL);
+  }
+
   void back({int? id}) {
     Get.back(id: id);
   }
