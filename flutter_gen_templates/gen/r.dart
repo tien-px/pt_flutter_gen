@@ -137,7 +137,7 @@ class _Colors {
   const _Colors();
 
   {% for color in colors %}
-  const hex{{ color }} = Color(0xFF{{ color }});
+  final hex{{ color }} = const Color(0xFF{{ color }});
   {% endfor %}
 }
 
@@ -145,6 +145,6 @@ class _Fonts {
   const _Fonts();
 
   {% for font in fonts %}
-  const {{ font.name }} = "{{ font.family_name }}";
+  final {{ font.name }} = "{{ font.family_name }}";
   {% endfor %}
 }

@@ -66,19 +66,18 @@ class GenerateRCommand(Command):
         if not is_file_path_exist(path):
             print_error("Invalid folder")
             return
-        for file in os.listdir(path):
+        for file in sorted(os.listdir(path)):
             if file.endswith(".png") or file.endswith(".jpg") or file.endswith(".svg"):
                 file_name = os.path.splitext(file)[0].replace("-", "_")
-                list_image_files.append(
-                    ImageFile(snake_to_camel(file_name), file))
+                list_image_files.append(ImageFile(snake_to_camel(file_name), file))
         if not list_image_files:
             print_error("Can't find any image files")
 
         # Colors
         colors = []
-        with open("./assets/color/colors.txt", 'r') as f:
+        with open("./assets/color/colors.txt", "r") as f:
             for line in f:
-                color = line.strip().replace('#', '').upper()
+                color = line.strip().replace("#", "").upper()
                 colors.append(color)
         colors = list(dict.fromkeys(colors))
 
@@ -99,7 +98,7 @@ class GenerateRCommand(Command):
         env = Environment(
             loader=PackageLoader("flutter_gen_templates", "gen"),
             trim_blocks=True,
-            lstrip_blocks=True
+            lstrip_blocks=True,
         )
         template = env.get_template("r.dart")
         content = template.render(
@@ -110,6 +109,5 @@ class GenerateRCommand(Command):
             fonts=fonts,
         )
 
-        file_path = create_file(
-            content, "r", "g.dart", "lib/generated")
+        create_file(content, "r", "g.dart", "lib/generated")
         pi.end()

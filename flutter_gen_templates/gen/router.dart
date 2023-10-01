@@ -7,7 +7,7 @@ import '{{ file }}';
 {% endfor %}
 
 abstract class AppRouter {
-  void reset()
+  void reset();
   void back({int? id});
   void backToRoot({int? id});
   {% for item in items %}
